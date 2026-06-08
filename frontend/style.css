@@ -1,16 +1,17 @@
 :root {
-  --bg: #82aacb;
-  --bg-alt: #0d2f6d;
-  --text: #141517;
-  --muted: #19191b;
-  --accent: #3563ae;
-  --accent-2: #56d1d1;
-  --card: rgba(194, 214, 119, 0.78);
-  --border: rgba(64, 93, 155, 0.12);
-  --shadow: 0 14px 40px rgba(90, 111, 155, 0.14);
+  --bg:       #E6F1FB;                        /* Blue 50  — page background */
+  --bg-mid:   #B5D4F4;                        /* Blue 100 — nav, badges, panel fills (NEW) */
+  --bg-alt:   #042C53;                        /* Blue 900 — dark sections */
+  --text:     #042C53;                        /* Blue 900 — primary text */
+  --muted:    #185FA5;                        /* Blue 600 — secondary text (was #7da2c8, too low contrast) */
+  --accent:   #378ADD;                        /* Blue 400 — buttons, links, interactive */
+  --accent-2: #1D9E75;                        /* Teal 400 — secondary accent */
+  --card:     rgba(55, 138, 221, 0.09);       /* blue-tinted card bg (was dark rgba(24,33,44,0.08)) */
+  --border:   rgba(24, 95, 165, 0.30);        /* visible border (was too faint 0.18 alpha) */
+  --shadow:   0 14px 40px rgba(4, 44, 83, 0.14); /* blue-tinted shadow (was warm grey tint) */
 }
 
-* { 
+* {
   box-sizing: border-box;
 }
 
@@ -75,7 +76,7 @@ body {
   align-items: center;
   padding: 18px clamp(20px, 5vw, 64px);
   backdrop-filter: blur(10px);
-  background: rgba(244, 248, 255, 0.76);
+  background: rgba(181, 212, 244, 0.72);      /* was rgba(244,248,255,0.76) — now uses --bg-mid tint */
   border-bottom: 0;
   z-index: 10;
 }
@@ -108,7 +109,7 @@ nav a {
 
 .hero-links a {
   text-decoration: none;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
 }
 
 .hero-links .social-icon {
@@ -118,7 +119,7 @@ nav a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(11, 87, 208, 0.3);
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.3) */
   background: rgba(255, 255, 255, 0.74);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
@@ -131,8 +132,8 @@ nav a {
 
 .hero-links .social-icon:hover {
   transform: translateY(-2px);
-  background: rgba(11, 87, 208, 0.08);
-  box-shadow: 0 8px 16px rgba(11, 87, 208, 0.18);
+  background: rgba(55, 138, 221, 0.10);      /* was hardcoded rgba(11,87,208,0.08) */
+  box-shadow: 0 8px 16px rgba(4, 44, 83, 0.18); /* blue-tinted */
 }
 
 main {
@@ -183,7 +184,7 @@ main {
   padding: 10px 0 0;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
 }
 
 .hero-image {
@@ -200,8 +201,8 @@ main {
   display: inline-block;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(11, 87, 208, 0.12);
-  color: #0b57d0;
+  background: rgba(55, 138, 221, 0.12);      /* was hardcoded rgba(11,87,208,0.12) */
+  color: var(--muted);                        /* was hardcoded #0b57d0 — now uses token */
   font-weight: 700;
   margin: 0 0 18px;
 }
@@ -242,25 +243,25 @@ h1 {
   justify-content: center;
   text-decoration: none;
   font-size: 1.4rem;
-  color: #0b57d0;
-  border: 1px solid rgba(11, 87, 208, 0.35);
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.35) */
   background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 8px 16px rgba(11, 87, 208, 0.18);
+  box-shadow: 0 8px 16px rgba(4, 44, 83, 0.18);
   animation: arrowBounce 1.8s ease-in-out infinite;
 }
 
 .hero-down-arrow:hover {
-  background: rgba(11, 87, 208, 0.1);
+  background: rgba(55, 138, 221, 0.10);      /* was hardcoded rgba(11,87,208,0.1) */
 }
 
 .ai-graphic {
   position: relative;
   min-height: 340px;
   border-radius: 24px;
-  border: 1px solid rgba(11, 87, 208, 0.2);
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.2) */
   background:
     radial-gradient(circle at 15% 20%, rgba(0, 163, 163, 0.22), transparent 36%),
-    radial-gradient(circle at 90% 75%, rgba(11, 87, 208, 0.22), transparent 40%),
+    radial-gradient(circle at 90% 75%, rgba(55, 138, 221, 0.22), transparent 40%),
     rgba(255, 255, 255, 0.62);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -281,9 +282,9 @@ h1 {
   padding: 24px;
   border: 4px solid rgba(255, 255, 255, 0.82);
   background: #dbe8ff;
-  box-shadow: 0 12px 30px rgba(11, 87, 208, 0.3);
+  box-shadow: 0 12px 30px rgba(4, 44, 83, 0.30);
   z-index: 8;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-family: "Fraunces", serif;
   font-size: 2rem;
   font-weight: 800;
@@ -298,12 +299,12 @@ h1 {
   transform: translate(-50%, -50%);
   padding: 14px 20px;
   border-radius: 12px;
-  background: linear-gradient(120deg, #0b57d0, #00a3a3);
+  background: linear-gradient(120deg, var(--accent), var(--accent-2)); /* was hardcoded hex pair */
   color: #fff;
   font-weight: 800;
   letter-spacing: 0.08em;
   font-size: 0.9rem;
-  box-shadow: 0 12px 30px rgba(11, 87, 208, 0.35);
+  box-shadow: 0 12px 30px rgba(4, 44, 83, 0.35);
 }
 
 .ai-node {
@@ -312,8 +313,8 @@ h1 {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #0b57d0;
-  box-shadow: 0 0 0 6px rgba(11, 87, 208, 0.14);
+  background: var(--accent);                 /* was hardcoded #0b57d0 */
+  box-shadow: 0 0 0 6px rgba(55, 138, 221, 0.14);
 }
 
 .n1 { top: 18%; left: 18%; }
@@ -358,7 +359,7 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(circle at center, rgba(11, 87, 208, 0.18), transparent 45%);
+  background: radial-gradient(circle at center, rgba(55, 138, 221, 0.18), transparent 45%);
   animation: pulseGlow 3.2s ease-in-out infinite;
 }
 
@@ -372,7 +373,7 @@ h1 {
 
 .hero-metric {
   border-radius: 14px;
-  border: 1px solid rgba(11, 87, 208, 0.18);
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.18) */
   background: rgba(255, 255, 255, 0.65);
   padding: 14px;
 }
@@ -469,9 +470,9 @@ h1 {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(11, 87, 208, 0.35);
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.35) */
   background: rgba(255, 255, 255, 0.78);
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-size: 1.2rem;
   line-height: 1;
   cursor: pointer;
@@ -480,7 +481,7 @@ h1 {
 
 .slider-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(11, 87, 208, 0.18);
+  box-shadow: 0 8px 16px rgba(4, 44, 83, 0.18);
 }
 
 .about-grid,
@@ -540,7 +541,7 @@ h1 {
   margin-top: 6px;
   height: 8px;
   border-radius: 999px;
-  background: rgba(11, 87, 208, 0.15);
+  background: rgba(55, 138, 221, 0.16);      /* was hardcoded rgba(11,87,208,0.15) */
   overflow: hidden;
 }
 
@@ -548,7 +549,7 @@ h1 {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #0b57d0, #00a3a3);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); /* was hardcoded hex pair */
 }
 
 .timeline {
@@ -572,7 +573,7 @@ h1 {
 .timeline-meta {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   margin-bottom: 8px;
 }
 
@@ -588,7 +589,7 @@ h1 {
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -601,9 +602,9 @@ h1 {
 }
 
 .skills-list span {
-  background: rgba(11, 87, 208, 0.1);
-  color: #0c3f99;
-  border: 1px solid rgba(11, 87, 208, 0.2);
+  background: rgba(55, 138, 221, 0.10);      /* was hardcoded rgba(11,87,208,0.1) */
+  color: var(--text);                         /* was hardcoded #0c3f99 — unify under --text */
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.2) */
   border-radius: 999px;
   padding: 8px 14px;
   font-weight: 700;
@@ -617,7 +618,7 @@ h1 {
 .project-tech {
   margin-top: 10px;
   font-size: 0.84rem;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-weight: 700;
 }
 
@@ -625,8 +626,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 18px 42px rgba(11, 34, 84, 0.2);
-  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(4, 44, 83, 0.20);
 }
 
 .chatbot-floater {
@@ -645,8 +645,8 @@ h1 {
   height: 58px;
   border-radius: 50%;
   border: 0;
-  background: linear-gradient(120deg, #0b57d0, #00a3a3);
-  box-shadow: 0 18px 36px rgba(11, 87, 208, 0.28);
+  background: linear-gradient(120deg, var(--accent), var(--accent-2)); /* was hardcoded hex pair */
+  box-shadow: 0 18px 36px rgba(4, 44, 83, 0.28);
   color: #fff;
   display: inline-flex;
   align-items: center;
@@ -671,7 +671,7 @@ h1 {
   gap: 12px;
   padding: 14px 16px;
   border-bottom: 1px solid rgba(17, 24, 39, 0.08);
-  background: linear-gradient(120deg, rgba(11, 87, 208, 0.08), rgba(0, 163, 163, 0.08));
+  background: linear-gradient(120deg, rgba(55, 138, 221, 0.08), rgba(29, 158, 117, 0.08)); /* was hardcoded hex pair */
 }
 
 .chatbot-topbar h2 {
@@ -688,9 +688,9 @@ h1 {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(11, 87, 208, 0.25);
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.25) */
   background: #fff;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
@@ -720,13 +720,13 @@ h1 {
 
 .chatbot-message.bot {
   align-self: flex-start;
-  background: rgba(11, 87, 208, 0.12);
+  background: rgba(55, 138, 221, 0.12);      /* was hardcoded rgba(11,87,208,0.12) */
   color: var(--text);
 }
 
 .chatbot-message.user {
   align-self: flex-end;
-  background: linear-gradient(120deg, #0b57d0, #00a3a3);
+  background: linear-gradient(120deg, var(--accent), var(--accent-2)); /* was hardcoded hex pair */
   color: #fff;
 }
 
@@ -747,8 +747,8 @@ h1 {
 }
 
 .chatbot-form input:focus {
-  outline: 2px solid rgba(11, 87, 208, 0.22);
-  border-color: rgba(11, 87, 208, 0.45);
+  outline: 2px solid rgba(55, 138, 221, 0.22); /* was hardcoded rgba(11,87,208,0.22) */
+  border-color: rgba(55, 138, 221, 0.45);      /* was hardcoded rgba(11,87,208,0.45) */
 }
 
 .chatbot-card.is-collapsed .chatbot-body {
@@ -769,7 +769,7 @@ h1 {
 }
 
 .chatbot-note span {
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-weight: 700;
 }
 
@@ -804,8 +804,8 @@ h1 {
   margin: 0 0 10px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(11, 87, 208, 0.12);
-  color: #0b57d0;
+  background: rgba(55, 138, 221, 0.12);      /* was hardcoded rgba(11,87,208,0.12) */
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -838,18 +838,18 @@ h1 {
   min-height: 44px;
   padding: 10px 14px;
   border-radius: 12px;
-  border: 1px solid rgba(11, 87, 208, 0.2);
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.2) */
   background: rgba(255, 255, 255, 0.76);
   text-decoration: none;
-  color: #0b57d0;
+  color: var(--accent);                       /* was hardcoded #0b57d0 */
   font-weight: 700;
 }
 
 .footer-links .contact-box {
   min-height: 56px;
-  border: 1px solid rgba(11, 87, 208, 0.35);
-  background: linear-gradient(135deg, rgba(11, 87, 208, 0.1), rgba(0, 163, 163, 0.08));
-  box-shadow: 0 8px 20px rgba(11, 87, 208, 0.12);
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.35) */
+  background: linear-gradient(135deg, rgba(55, 138, 221, 0.10), rgba(29, 158, 117, 0.08)); /* was hardcoded hex pair */
+  box-shadow: 0 8px 20px rgba(4, 44, 83, 0.12);
 }
 
 .footer-cta {
@@ -866,10 +866,10 @@ h1 {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #0a3e98;
-  background: linear-gradient(120deg, rgba(11, 87, 208, 0.2), rgba(0, 163, 163, 0.2));
-  border: 1px solid rgba(11, 87, 208, 0.34);
-  box-shadow: 0 8px 18px rgba(11, 87, 208, 0.18);
+  color: var(--text);                         /* was hardcoded #0a3e98 */
+  background: linear-gradient(120deg, rgba(55, 138, 221, 0.20), rgba(29, 158, 117, 0.20)); /* was hardcoded hex pair */
+  border: 1px solid var(--border);           /* was hardcoded rgba(11,87,208,0.34) */
+  box-shadow: 0 8px 18px rgba(4, 44, 83, 0.18);
 }
 
 .footer-cta h2 {
@@ -883,14 +883,14 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, #0b57d0, #00a3a3);
+  background: linear-gradient(120deg, var(--accent), var(--accent-2)); /* was hardcoded hex pair */
   border: 0;
-  box-shadow: 0 10px 24px rgba(11, 87, 208, 0.28);
+  box-shadow: 0 10px 24px rgba(4, 44, 83, 0.28);
   margin-top: 12px;
 }
 
 .footer-cta .btn-primary:hover {
-  box-shadow: 0 14px 30px rgba(11, 87, 208, 0.34);
+  box-shadow: 0 14px 30px rgba(4, 44, 83, 0.34);
 }
 
 .footer-copy {
