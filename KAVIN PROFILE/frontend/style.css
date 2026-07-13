@@ -1,13 +1,14 @@
 :root {
-  --bg: #BDDDFC;
-  --bg-alt: #22447a;
-  --text: #f0f6ff;
-  --muted: #8ab0d8;
-  --accent: #4a80cc;
-  --accent-2: #56d1d1;
-  --card: #6A89A7;
-  --border: rgba(255,255,255,0.14);
-  --shadow: 0 14px 40px rgba(10,20,50,0.30);
+  --bg:       #E6F1FB;                        /* Blue 50  — page background */
+  --bg-mid:   #B5D4F4;                        /* Blue 100 — nav, badges, panel fills (NEW) */
+  --bg-alt:   #125C96;                        /* Deeper blue end tone, but not too dark for readability */
+  --text:     #063D70;                        /* Strong readable text on light and mid-blue surfaces */
+  --muted:    #1D64A6;                        /* Secondary text with better contrast on darker scroll depth */
+  --accent:   #2F82D6;                        /* Accent blue tuned for visibility on darker backgrounds */
+  --accent-2: #1D9E75;                        /* Teal 400 — secondary accent */
+  --card:     rgba(230, 241, 251, 0.34);      /* Slightly stronger light card tint for consistent text legibility */
+  --border:   rgba(24, 95, 165, 0.30);        /* visible border (was too faint 0.18 alpha) */
+  --shadow:   0 14px 40px rgba(4, 44, 83, 0.14); /* blue-tinted shadow (was warm grey tint) */
 }
 {   
   box-sizing: border-box;
